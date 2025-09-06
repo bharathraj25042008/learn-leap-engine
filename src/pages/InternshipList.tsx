@@ -113,12 +113,12 @@ const InternshipList = () => {
                            internship.company.toLowerCase().includes(searchTerm.toLowerCase()) ||
                            internship.skills.some(skill => skill.toLowerCase().includes(searchTerm.toLowerCase()));
       
-      const matchesLocation = !locationFilter || 
+      const matchesLocation = !locationFilter || locationFilter === "all" || 
                              internship.location.toLowerCase().includes(locationFilter.toLowerCase()) ||
                              (locationFilter === "remote" && internship.location.toLowerCase() === "remote");
       
-      const matchesType = !typeFilter || internship.type === typeFilter;
-      const matchesDuration = !durationFilter || internship.duration.includes(durationFilter);
+      const matchesType = !typeFilter || typeFilter === "all" || internship.type === typeFilter;
+      const matchesDuration = !durationFilter || durationFilter === "all" || internship.duration.includes(durationFilter);
 
       return matchesSearch && matchesLocation && matchesType && matchesDuration;
     });
@@ -167,7 +167,7 @@ const InternshipList = () => {
                       <SelectValue placeholder="All locations" />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="">All locations</SelectItem>
+                      <SelectItem value="all">All locations</SelectItem>
                       <SelectItem value="remote">Remote</SelectItem>
                       <SelectItem value="san francisco">San Francisco, CA</SelectItem>
                       <SelectItem value="new york">New York, NY</SelectItem>
@@ -185,7 +185,7 @@ const InternshipList = () => {
                       <SelectValue placeholder="All types" />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="">All types</SelectItem>
+                      <SelectItem value="all">All types</SelectItem>
                       <SelectItem value="Full-time">Full-time</SelectItem>
                       <SelectItem value="Part-time">Part-time</SelectItem>
                     </SelectContent>
@@ -199,7 +199,7 @@ const InternshipList = () => {
                       <SelectValue placeholder="All durations" />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="">All durations</SelectItem>
+                      <SelectItem value="all">All durations</SelectItem>
                       <SelectItem value="3">3 months</SelectItem>
                       <SelectItem value="4">4 months</SelectItem>
                       <SelectItem value="5">5 months</SelectItem>
