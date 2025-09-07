@@ -13,74 +13,102 @@ const generateRecommendations = (studentSkills: string[], studentInterests: stri
     {
       id: 1,
       title: "Software Engineering Intern",
-      company: "TechCorp Inc.",
-      location: "San Francisco, CA",
+      company: "TechMahindra",
+      location: "Bangalore, Karnataka",
       duration: "3 months",
-      stipend: "$2500/month",
+      stipend: "₹25,000/month",
       description: "Join our engineering team to work on cutting-edge web applications using React and Node.js.",
       skills: ["JavaScript", "React", "Node.js", "TypeScript", "Git"],
-      matchScore: 95,
-      skillsMatched: ["JavaScript", "React", "Node.js"],
-      missingSkills: ["TypeScript"],
+      matchScore: 0,
+      skillsMatched: [],
+      missingSkills: [],
       category: "Software Development",
     },
     {
       id: 2,
       title: "Frontend Developer Intern",
-      company: "WebSolutions Pro",
-      location: "Remote",
+      company: "Wipro",
+      location: "Hyderabad, Telangana",
       duration: "4 months",
-      stipend: "$2200/month",
+      stipend: "₹22,000/month",
       description: "Build responsive web applications and improve user experience.",
       skills: ["React", "TypeScript", "CSS", "HTML", "JavaScript"],
-      matchScore: 88,
-      skillsMatched: ["React", "JavaScript"],
-      missingSkills: ["TypeScript", "CSS"],
+      matchScore: 0,
+      skillsMatched: [],
+      missingSkills: [],
       category: "Web Development",
     },
     {
       id: 3,
       title: "Data Science Intern",
-      company: "DataAnalytics Pro",
-      location: "New York, NY",
+      company: "Infosys Limited",
+      location: "Pune, Maharashtra",
       duration: "4 months",
-      stipend: "$3000/month",
+      stipend: "₹30,000/month",
       description: "Work with machine learning models and analyze large datasets.",
       skills: ["Python", "Machine Learning", "SQL", "Pandas", "TensorFlow"],
-      matchScore: 72,
-      skillsMatched: ["Python"],
-      missingSkills: ["Machine Learning", "SQL", "Pandas"],
+      matchScore: 0,
+      skillsMatched: [],
+      missingSkills: [],
       category: "Data Science",
     },
     {
       id: 4,
       title: "Full Stack Developer Intern",
-      company: "StartupTech",
-      location: "Austin, TX",
+      company: "Flipkart",
+      location: "Gurgaon, Haryana",
       duration: "5 months",
-      stipend: "$2400/month",
+      stipend: "₹24,000/month",
       description: "Work on both frontend and backend systems using modern technologies.",
       skills: ["JavaScript", "React", "Node.js", "MongoDB", "Express"],
-      matchScore: 85,
-      skillsMatched: ["JavaScript", "React", "Node.js"],
-      missingSkills: ["MongoDB"],
+      matchScore: 0,
+      skillsMatched: [],
+      missingSkills: [],
       category: "Software Development",
     },
     {
       id: 5,
       title: "Mobile App Developer Intern",
-      company: "AppTech Solutions",
-      location: "Seattle, WA",
+      company: "Paytm",
+      location: "Chennai, Tamil Nadu",
       duration: "3 months",
-      stipend: "$2600/month",
+      stipend: "₹26,000/month",
       description: "Develop mobile applications for iOS and Android platforms.",
       skills: ["React Native", "JavaScript", "Mobile Development", "iOS", "Android"],
-      matchScore: 78,
-      skillsMatched: ["JavaScript"],
-      missingSkills: ["React Native", "Mobile Development"],
+      matchScore: 0,
+      skillsMatched: [],
+      missingSkills: [],
       category: "Mobile Development",
     },
   ];
+
+  // Calculate accurate match scores based on student skills
+  internships.forEach(internship => {
+    const matched = internship.skills.filter(skill => 
+      studentSkills.some(studentSkill => 
+        studentSkill.toLowerCase() === skill.toLowerCase()
+      )
+    );
+    
+    const missing = internship.skills.filter(skill => 
+      !studentSkills.some(studentSkill => 
+        studentSkill.toLowerCase() === skill.toLowerCase()
+      )
+    );
+    
+    // Calculate match percentage based on skill overlap
+    const matchPercentage = Math.round((matched.length / internship.skills.length) * 100);
+    
+    // Add bonus points for interest alignment
+    const hasInterestMatch = studentInterests.some(interest => 
+      internship.category.toLowerCase().includes(interest.toLowerCase()) ||
+      interest.toLowerCase().includes(internship.category.toLowerCase())
+    );
+    
+    internship.matchScore = Math.min(100, matchPercentage + (hasInterestMatch ? 10 : 0));
+    internship.skillsMatched = matched;
+    internship.missingSkills = missing;
+  });
 
   // Sort by match score and return top 5
   return internships.sort((a, b) => b.matchScore - a.matchScore).slice(0, 5);
@@ -124,7 +152,7 @@ const Recommendations = () => {
           skills: ['JavaScript', 'React', 'Python', 'Node.js'],
           interests: ['Software Development', 'Web Development'],
           education: 'Computer Science',
-          location: 'San Francisco, CA',
+          location: 'Bangalore, Karnataka',
         };
       }
 

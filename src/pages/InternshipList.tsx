@@ -12,11 +12,11 @@ const sampleInternships = [
   {
     id: 1,
     title: "Software Engineering Intern",
-    company: "TechCorp Inc.",
-    location: "San Francisco, CA",
+    company: "TechMahindra",
+    location: "Bangalore, Karnataka",
     type: "Full-time",
     duration: "3 months",
-    stipend: "$2500/month",
+    stipend: "₹25,000/month",
     description: "Join our engineering team to work on cutting-edge web applications using React and Node.js.",
     skills: ["JavaScript", "React", "Node.js", "TypeScript", "Git"],
     requirements: ["Computer Science student", "Strong programming skills", "Team collaboration"],
@@ -27,11 +27,11 @@ const sampleInternships = [
   {
     id: 2,
     title: "Data Science Intern",
-    company: "DataAnalytics Pro",
-    location: "New York, NY",
+    company: "Infosys Limited",
+    location: "Hyderabad, Telangana",
     type: "Full-time",
     duration: "4 months",
-    stipend: "$3000/month",
+    stipend: "₹30,000/month",
     description: "Work with our data science team to build machine learning models and analyze large datasets.",
     skills: ["Python", "Machine Learning", "SQL", "Pandas", "TensorFlow"],
     requirements: ["Statistics or CS background", "Python experience", "ML knowledge"],
@@ -42,11 +42,11 @@ const sampleInternships = [
   {
     id: 3,
     title: "UI/UX Design Intern",
-    company: "DesignStudio",
-    location: "Remote",
+    company: "Zomato",
+    location: "Gurgaon, Haryana",
     type: "Part-time",
     duration: "6 months",
-    stipend: "$1800/month",
+    stipend: "₹18,000/month",
     description: "Create beautiful and intuitive user interfaces for web and mobile applications.",
     skills: ["Figma", "Adobe Creative Suite", "UI/UX Design", "Prototyping", "User Research"],
     requirements: ["Design portfolio", "Design tools experience", "Creative thinking"],
@@ -57,11 +57,11 @@ const sampleInternships = [
   {
     id: 4,
     title: "Marketing Intern",
-    company: "BrandBoost Agency",
-    location: "Chicago, IL",
+    company: "Flipkart",
+    location: "Mumbai, Maharashtra",
     type: "Full-time",
     duration: "3 months",
-    stipend: "$2200/month",
+    stipend: "₹22,000/month",
     description: "Help develop and execute marketing campaigns across digital and traditional channels.",
     skills: ["Social Media", "Content Writing", "Google Analytics", "SEO", "Marketing"],
     requirements: ["Marketing or Communications student", "Social media experience", "Creative writing"],
@@ -72,11 +72,11 @@ const sampleInternships = [
   {
     id: 5,
     title: "Financial Analyst Intern",
-    company: "InvestmentFirm LLC",
-    location: "Boston, MA",
+    company: "HDFC Bank",
+    location: "Chennai, Tamil Nadu",
     type: "Full-time",
     duration: "4 months",
-    stipend: "$2800/month",
+    stipend: "₹28,000/month",
     description: "Assist with financial modeling, market research, and investment analysis.",
     skills: ["Excel", "Financial Modeling", "Data Analysis", "Bloomberg Terminal", "Finance"],
     requirements: ["Finance or Economics student", "Excel proficiency", "Analytical skills"],
@@ -87,11 +87,11 @@ const sampleInternships = [
   {
     id: 6,
     title: "Mobile App Development Intern",
-    company: "AppTech Solutions",
-    location: "Austin, TX",
+    company: "Paytm",
+    location: "Noida, Uttar Pradesh",
     type: "Full-time",
     duration: "5 months",
-    stipend: "$2600/month",
+    stipend: "₹26,000/month",
     description: "Develop mobile applications for iOS and Android platforms using React Native.",
     skills: ["React Native", "JavaScript", "Mobile Development", "iOS", "Android"],
     requirements: ["Mobile development experience", "React knowledge", "App store submission"],
@@ -169,11 +169,12 @@ const InternshipList = () => {
                     <SelectContent>
                       <SelectItem value="all">All locations</SelectItem>
                       <SelectItem value="remote">Remote</SelectItem>
-                      <SelectItem value="san francisco">San Francisco, CA</SelectItem>
-                      <SelectItem value="new york">New York, NY</SelectItem>
-                      <SelectItem value="chicago">Chicago, IL</SelectItem>
-                      <SelectItem value="boston">Boston, MA</SelectItem>
-                      <SelectItem value="austin">Austin, TX</SelectItem>
+                      <SelectItem value="bangalore">Bangalore, Karnataka</SelectItem>
+                      <SelectItem value="hyderabad">Hyderabad, Telangana</SelectItem>
+                      <SelectItem value="gurgaon">Gurgaon, Haryana</SelectItem>
+                      <SelectItem value="mumbai">Mumbai, Maharashtra</SelectItem>
+                      <SelectItem value="chennai">Chennai, Tamil Nadu</SelectItem>
+                      <SelectItem value="noida">Noida, Uttar Pradesh</SelectItem>
                     </SelectContent>
                   </Select>
                 </div>

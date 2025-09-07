@@ -82,10 +82,10 @@ const Index = () => {
                   <img
                     src={heroImage}
                     alt="AI Internship Matching"
-                    className="rounded-2xl shadow-2xl animate-float"
+                    className="rounded-2xl shadow-2xl"
                   />
                 </div>
-                <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-blue-500/20 rounded-2xl transform rotate-3 scale-105 animate-pulse-slow"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-blue-500/20 rounded-2xl transform rotate-2 scale-105 opacity-50"></div>
               </div>
             </div>
           </div>
