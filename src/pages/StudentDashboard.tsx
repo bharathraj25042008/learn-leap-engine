@@ -182,25 +182,25 @@ const StudentDashboard = () => {
                           <SelectValue placeholder="Select year" />
                         </SelectTrigger>
                         <SelectContent>
-                          <SelectItem value="freshman">Freshman</SelectItem>
-                          <SelectItem value="sophomore">Sophomore</SelectItem>
-                          <SelectItem value="junior">Junior</SelectItem>
-                          <SelectItem value="senior">Senior</SelectItem>
+                          <SelectItem value="first-year">First Year</SelectItem>
+                          <SelectItem value="second-year">Second Year</SelectItem>
+                          <SelectItem value="third-year">Third Year</SelectItem>
+                          <SelectItem value="fourth-year">Fourth Year</SelectItem>
                           <SelectItem value="graduate">Graduate</SelectItem>
                         </SelectContent>
                       </Select>
                     </div>
                     <div className="space-y-2">
-                      <Label htmlFor="gpa">GPA (Optional)</Label>
+                      <Label htmlFor="gpa">CGPA (Optional)</Label>
                       <Input
                         id="gpa"
                         value={formData.gpa}
                         onChange={(e) => setFormData(prev => ({ ...prev, gpa: e.target.value }))}
-                        placeholder="3.5"
+                        placeholder="8.5"
                         type="number"
                         step="0.1"
                         min="0"
-                        max="4"
+                        max="10"
                       />
                     </div>
                   </div>
